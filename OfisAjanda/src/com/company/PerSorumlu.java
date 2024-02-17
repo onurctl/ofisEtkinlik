@@ -176,7 +176,7 @@ public class PerSorumlu {
                 baslikL.setText("Katılımcı Listesi - "+ "Etkinlik: "+etkIDText.getText());
 
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:----/------", "system", "passw");
                     modelKatilim.setRowCount(0);
                     String sql = "SELECT * FROM EtkinlikKatilimci WHERE etkID=?";
 
@@ -229,7 +229,7 @@ public class PerSorumlu {
                 calisanscroll.setVisible(false); calisanscroll2.setVisible(true);
                 baslikL.setText("Çalışan Listesi");
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     Statement mystate = conn.createStatement();
                     model2.setRowCount(0);
                     ResultSet myRes = mystate.executeQuery("SELECT * FROM Personel");
@@ -296,7 +296,7 @@ public class PerSorumlu {
 //tarih, baslangicSaat, bitisSaat, yer, olusturanID
 
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
                     String sql = "INSERT INTO EtkinlikDetay (tarih, baslangicSaat, bitisSaat, yer, olusturanID, aciklama) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -327,7 +327,7 @@ public class PerSorumlu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     String sql = "UPDATE EtkinlikDetay SET tarih=? baslangicSaat=? bitisSaat=?, yer=?, aciklama=? WHERE etkinlikID=?";
 
                     PreparedStatement statement = conn.prepareStatement(sql);
@@ -358,7 +358,7 @@ public class PerSorumlu {
             public void actionPerformed(ActionEvent e) {
 
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
                     String sql = "INSERT INTO EtkinlikKatilimci (etkID, katilimciID) VALUES (?, ?)";
 
@@ -383,7 +383,7 @@ public class PerSorumlu {
 
 
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     String sql = "DELETE FROM EtkinlikKatilimci " +
                             "WHERE katilimciID=?";
 
@@ -412,7 +412,7 @@ public class PerSorumlu {
                 calisanscroll.setVisible(true);
                 baslikL.setText("Etkinlik Listesi");
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     Statement mystate = conn.createStatement();
                     model.setRowCount(0);
                     ResultSet myRes = mystate.executeQuery("SELECT * FROM EtkinlikDetay");
@@ -574,7 +574,7 @@ public class PerSorumlu {
     void stats() {
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
             Statement mystate = conn.createStatement();
 
             ResultSet myRes = mystate.executeQuery("SELECT * FROM istatistikler");
@@ -601,7 +601,7 @@ public class PerSorumlu {
         calisanscroll.setVisible(true);
         baslikL.setText("Etkinlik Listesi");
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
             Statement mystate = conn.createStatement();
             model.setRowCount(0);
             ResultSet myRes = mystate.executeQuery("SELECT * FROM EtkinlikDetay");
@@ -683,7 +683,7 @@ public class PerSorumlu {
         bilgiler2.add(sorumluOlEkipCek);
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
             String sqlString = "SELECT * from Personel WHERE calisanID=?";
             Statement mystate = conn.createStatement();
@@ -727,7 +727,7 @@ public class PerSorumlu {
         String[] bilgiler = new String[3];
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
 
             String sqlString = "SELECT * from Personel WHERE calisanID=?";
