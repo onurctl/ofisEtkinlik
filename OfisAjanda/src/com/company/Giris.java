@@ -59,7 +59,7 @@ public class Giris {
             String kulSif = String.valueOf(sifreText.getPassword());
 
             try {
-                Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+                Connection conn = DriverManager.getConnection("jdbc:oracle:thin://l@ocalhost:----/-----", "system", "password");
 
 
                 String sqlString = "SELECT * from Personel WHERE calisanID=? and sifre=?";
