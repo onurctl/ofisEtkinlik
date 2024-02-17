@@ -209,7 +209,7 @@ public class Yonetim {
                 calisanscroll.setVisible(true);
                 baslikL.setText("Çalışan Listesi");
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     Statement mystate = conn.createStatement();
                     model.setRowCount(0);
                     ResultSet myRes = mystate.executeQuery("SELECT * FROM Personel");
@@ -265,7 +265,7 @@ public class Yonetim {
                 calisanscroll.setVisible(false);
                 baslikL.setText("Etkinlik Listesi");
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     Statement mystate = conn.createStatement();
                     model2.setRowCount(0);
                     ResultSet myRes = mystate.executeQuery("SELECT * FROM EtkinlikDetay");
@@ -343,7 +343,7 @@ public class Yonetim {
             public void actionPerformed(ActionEvent e) {
 
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     String sql = "DELETE FROM EtkinlikDetay " +
                             "WHERE etkinlikID=?";
 
@@ -438,7 +438,7 @@ public class Yonetim {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
                     model.setRowCount(0);
                     String sqlString = "SELECT * from Personel WHERE calisanID=?";
@@ -472,7 +472,7 @@ public class Yonetim {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
                     model.setRowCount(0);
                     String sqlString = "SELECT * from Personel WHERE pozisyon=?";
@@ -551,7 +551,7 @@ public class Yonetim {
 
                 try {
 
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
                     String sql = "INSERT INTO Personel (ad, soyad, sifre, telefon, pozisyon, dogumTarihi, iseGirisTarihi, cinsiyet) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -588,7 +588,7 @@ public class Yonetim {
             public void actionPerformed(ActionEvent e) {
 
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     String sql = "DELETE FROM Personel " +
                             "WHERE calisanID=?";
 
@@ -654,7 +654,7 @@ public class Yonetim {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
                     String sql = "UPDATE Personel SET ad=?, soyad=?, sifre=?, telefon=?, pozisyon=?" +
                              "WHERE calisanID=?";
 
@@ -754,7 +754,7 @@ public class Yonetim {
         bilgiler2.add(sorumluOlEkipCek);
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
             String sqlString = "SELECT * from Personel WHERE calisanID=?";
             Statement mystate = conn.createStatement();
@@ -796,7 +796,7 @@ public class Yonetim {
     void stats (){
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
             Statement mystate = conn.createStatement();
 
             ResultSet myRes = mystate.executeQuery("SELECT * FROM istatistikler");
@@ -820,7 +820,7 @@ public class Yonetim {
 
     void calisanTablo(){
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
             Statement mystate = conn.createStatement();
             model.setRowCount(0);
             ResultSet myRes = mystate.executeQuery("SELECT * FROM Personel");
