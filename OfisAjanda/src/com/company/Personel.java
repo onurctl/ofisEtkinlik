@@ -236,7 +236,7 @@ public class Personel {
         bilgiler2.add(sorumluOlEkipCek);
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
 
             String sqlString = "SELECT * from Personel WHERE calisanID=?";
             Statement mystate = conn.createStatement();
@@ -278,7 +278,7 @@ public class Personel {
     void stats() {
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
             Statement mystate = conn.createStatement();
 
             ResultSet myRes = mystate.executeQuery("SELECT * FROM istatistikler");
@@ -300,7 +300,7 @@ public class Personel {
     void etkinliktab () {
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XEPDB1", "system", "Orc-194-f");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:/", "system", "");
             Statement mystate = conn.createStatement();
             model.setRowCount(0);
             ResultSet myRes = mystate.executeQuery("SELECT * FROM EtkinlikDetay");
